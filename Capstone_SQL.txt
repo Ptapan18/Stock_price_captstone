@@ -1,0 +1,13 @@
+SELECT *
+FROM INFYHistoricalDataFinal
+JOIN BSESensex30HistoricalDataFinal ON INFYHistoricalDataFinal.Date = BSESensex30HistoricalDataFinal.Date
+JOIN India_government_indicies_Final ON INFYHistoricalDataFinal.date = India_government_indicies_Final.date
+JOIN Nifty50HistoricalDataFinal ON INFYHistoricalDataFinal.date = Nifty50HistoricalDataFinal.Date
+JOIN USD_INRHistoricalDataFinal ON INFYHistoricalDataFinal.date = USD_INRHistoricalDataFinal.date;
+
+
+ALTER TABLE INFYHistoricalDataFinal
+DROP COLUMN 'vol.';
+
+ALTER TABLE INFYHistoricalDataFinal
+DROP COLUMN 'change_%';
